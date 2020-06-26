@@ -1,0 +1,39 @@
+spring:
+  rabbitmq:
+    host: localhost
+    username: guest
+    password: guest
+    port: 5672
+    management-port: 15672
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/ecommerce
+    username: postgres
+    password: postgres
+    hikari:
+      pool-name: ecommerce-pool
+    tomcat:
+      max-active: 50
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: false
+        temp:
+          use_jdbc_metadata_defaults: false
+  flyway:
+    baseline-on-migrate: true
+  main:
+    lazy-initialization: true
+server:
+  compression:
+    enabled: true
+tjf:
+  api:
+    filter:
+      fields:
+        enabled: true
