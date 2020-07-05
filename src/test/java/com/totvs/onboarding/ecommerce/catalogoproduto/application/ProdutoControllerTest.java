@@ -41,7 +41,7 @@ public class ProdutoControllerTest {
     @AfterEach
     @BeforeEach
     public void cleanup() {
-        jdbcTemplate.update("DELETE FROM PRODUTO");
+        jdbcTemplate.update("TRUNCATE PRODUTO CASCADE");
     }
 
     @Test

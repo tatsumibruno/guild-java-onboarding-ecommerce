@@ -17,11 +17,12 @@ import static com.totvs.onboarding.ecommerce.catalogoproduto.domain.StatusProdut
 @Getter
 @ToString
 @EqualsAndHashCode(of = "id")
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@NoArgsConstructor
 public class Produto {
     @Id
     @Setter
     @GeneratedValue
+    @Column(name = "produto_id")
     private UUID id;
     @Valid
     @Embedded
